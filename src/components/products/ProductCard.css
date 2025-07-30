@@ -1,0 +1,24 @@
+.cardContainerProductCard {
+    background: var(--background);
+    border-radius: 12px;
+    box-shadow: 0 6px 6px #000000b4;
+    cursor: pointer;
+  }
+
+  .cardContainerProductCard:hover {
+    box-shadow: none;
+    transition:  box-shadow .8s ease;
+  }
+  
+  .titleProductCard {
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .priceProductCard { font-weight: 600; color: #111827; }
+  .linkProductCard { color: #0062EB; }
+  .linkProductCard:hover { text-decoration: underline; }
+  

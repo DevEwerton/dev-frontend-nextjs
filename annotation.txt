@@ -1,0 +1,13 @@
+-Brand's color:
+#0062EB
+
+Tecninal Test
+
+-Fork from github:
+https://github.com/power-gestao/dev-frontend-nextjs
+
+-Enviroment versions:
+node: 
+npm: 
+
+-How to run:

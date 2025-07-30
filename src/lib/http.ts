@@ -8,6 +8,6 @@ export async function http<T>(path: string, opt: Opt = {}): Promise<T> {
     headers: { "Content-Type": "application/json", ...(opt.headers || {}) },
     body: opt.body !== undefined ? JSON.stringify(opt.body) : undefined,
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  if (!res.ok) { throw new Error(`HTTP ${res.status}`); }
   return (await res.json()) as T;
 }
