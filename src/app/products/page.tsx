@@ -12,7 +12,25 @@ export default function ProductsPage() {
   return (
     <div className="p-6">
       <div className="mb-4">
-        <Link href="/products/new" className="px-3 py-2 rounded bg-black text-white">+ novo produto</Link>
+        <Link 
+          href="/products/new"
+          className={`
+            bg-green-600
+            hover:bg-green-700
+            text-white
+            font-medium
+            py-2
+            px-4
+            rounded-lg
+            disabled:opacity-50
+            cursor-pointer
+            transition-colors
+            duration-200
+            ml-auto
+          `}
+        >
+          + novo produto
+        </Link>
       </div>
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {data!.map((p) => <ProductCard key={p.id} product={p} />)}

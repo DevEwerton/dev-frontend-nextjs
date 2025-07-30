@@ -2,7 +2,7 @@
     background: var(--background);
     border-radius: 12px;
     box-shadow: 0 6px 6px #000000b4;
-    cursor: pointer;
+    cursor: default;
   }
 
   .cardContainerProductCard:hover {

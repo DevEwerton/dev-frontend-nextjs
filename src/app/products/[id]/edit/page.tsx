@@ -26,20 +26,41 @@ export default function EditProductPage() {
   };
 
   return (
-    <div className="p-6 max-w-xl space-y-4">
-      <h1 className="text-lg font-semibold">Alterando o produto...</h1>
-      <ProductForm
-        submitText="salvar"
-        onSubmit={onSubmit}
-        defaultValues={{
-          title: data.title,
-          price: data.price,
-          description: data.description,
-          category: data.category,
-          image: data.image ?? "",
-        }}
-      />
-      <button onClick={onDelete} className="px-4 py-2 rounded bg-red-600 text-white">excluir</button>
-    </div>
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="w-full max-w-xl flex flex-col bg-white p-6 rounded-[12px] shadow-md">
+          <h1 className="text-lg font-semibold mb-6 text-center">Alterar Produto</h1>
+          <ProductForm
+            submitText="salvar"
+            onSubmit={onSubmit}
+            defaultValues={{
+              title: data.title,
+              price: data.price,
+              description: data.description,
+              category: data.category,
+              image: data.image ?? "",
+            }}
+          />
+          <button
+            onClick={onDelete}
+            className="
+              bg-red-600
+              hover:bg-red-700
+              text-white
+              font-medium
+              py-2
+              px-4
+              rounded-lg
+              disabled:opacity-50
+              cursor-pointer
+              transition-colors
+              duration-200
+              ml-auto
+              mt-4
+            "
+          >
+            excluir
+          </button>
+        </div>
+      </div>
   );
 }

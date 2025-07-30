@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Store developed by Ewerton",
 };
 
-export default function RootLayout({children,}: Readonly<{children: React.ReactNode; }>) {
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
