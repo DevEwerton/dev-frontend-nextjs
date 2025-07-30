@@ -8,14 +8,20 @@ export default function ProductDetailPage() {
   const id = Number(params.id);
   const { data, isLoading, isError } = useProduct(id);
 
-  if (isLoading) { return <p>Aguarde, estamos trazendo as informações...</p>; }
-  if (isError || !data) { return <p>Opsssss, não conseguimos encontrar. Tente novamente mais tarde</p>; }
+  if (isLoading) { return <p className="p-6 text-white">Aguarde, estamos trazendo as informações...</p>; }
+  if (isError || !data) { return <p className="p-6 text-white">Opsssss, não conseguimos encontrar. Tente novamente mais tarde</p>; }
+
+  const priceBRL = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+  }).format(data.price);
 
   return (
     <div className="p-6 space-y-3 bg-white rounded-[12px] shadow-md max-w-2xl mx-auto mt-8 flex flex-col items-center">
       <img src={data.image ?? ""} alt={data.title} className="h-40 object-contain" />
       <h1 className="text-xl font-semibold">{data.title}</h1>
-      <p>R$ {data.price}</p>
+      <p>{priceBRL}</p>
       <p className="text-gray-600">{data.category}</p>
       <p>{data.description}</p>
       <Link

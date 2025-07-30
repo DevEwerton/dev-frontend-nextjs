@@ -13,7 +13,7 @@ export default function EditProductPage() {
   const { mutateAsync: deleteAsync } = useDeleteProduct();
   const router = useRouter();
 
-  if (!data) return <p className="p-6">loading…</p>;
+  if (!data) { return <p className="p-6 text-white">Aguarde, estamos trazendo as informações...</p>; }
 
   const onSubmit = async (form: ProductFormData) => {
     await updateAsync({ id, ...form, image: form.image || undefined });

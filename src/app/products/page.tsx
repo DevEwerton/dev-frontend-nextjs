@@ -6,8 +6,8 @@ import ProductCard from "@/components/products/ProductCard";
 export default function ProductsPage() {
   const { data, isLoading, isError } = useProducts();
 
-  if (isLoading) { return <p>Aguarde, estamos carregando as informações...</p>; }
-  if (isError) { return <p>Opsssss, tivemos algum problema. Tente novamente mais tarde.</p>; }
+  if (isLoading) { return <p className="p-6 text-white">Aguarde, estamos carregando as informações...</p>; }
+  if (isError) { return <p className="p-6 text-white">Opsssss, tivemos algum problema. Tente novamente mais tarde.</p>; }
 
   return (
     <div className="p-6">

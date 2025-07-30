@@ -1,13 +1,21 @@
--Brand's color:
-#0062EB
-
 Tecninal Test
+This project is a complete CRUD application for managing products using Next.js (App Router) with TypeScript, React Query, React Hook Form, Zod for validation, and TailwindCSS for styling. It consumes the FakeStore API and follows a clean architecture, separating data access, hooks, and UI components. The application includes a login screen (fake login), product listing, detailed view, creation, editing, and deletion, all with user feedback and a responsive interface.
 
 -Fork from github:
-https://github.com/power-gestao/dev-frontend-nextjs
+[https://github.com/power-gestao/dev-frontend-nextjs] to [https://github.com/DevEwerton/dev-frontend-nextjs]
 
--Enviroment versions:
-node: 
-npm: 
 
--How to run:
+-Enviroment configurations:
+node: 18.20.8
+npm: 10.8.2
+
+-How to test:
+
+*online version:
+[]
+
+*local version:
+1 - run the command: npm install
+2 - run the command: npm run dev
+3 - access the local address: http://localhost:3000
+4 - click in the "entrar" button. Don't need to fill the email and password!

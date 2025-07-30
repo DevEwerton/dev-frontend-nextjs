@@ -1,21 +1,56 @@
-import Link from "next/link";
+"use client";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+
+type LoginForm = { email?: string; password?: string };
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+  const router = useRouter();
+  const { register, handleSubmit, formState: { isSubmitting } } = useForm<LoginForm>();
 
-        <Link href="/products" className="px-4 py-2 rounded bg-black text-white">acessar a loja</Link>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <Link
-          href="https://ewertondias.com"
-          target="_blank"
-          className="text-gray-500 hover:text-gray-700 transition-colors" 
-        >
-          ewertondias.com
-        </Link>
-      </footer>
+  const onSubmit = async () => {
+    router.push("/products"); // redireciona mesmo sem validar
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center px-4">
+      <div className="w-full max-w-md bg-white p-6 rounded-xl shadow-md">
+        <h1 className="text-lg font-semibold mb-6 text-center">Login</h1>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+          <input
+            {...register("email")}
+            placeholder="e-mail"
+            className="w-full border p-2 rounded"
+          />
+          <input
+            type="password"
+            {...register("password")}
+            placeholder="senha"
+            className="w-full border p-2 rounded"
+          />
+
+          <button
+            disabled={isSubmitting}
+            className="
+              bg-green-600
+              hover:bg-green-700
+              text-white
+              font-medium
+              py-2
+              px-4
+              rounded-lg
+              disabled:opacity-50
+              cursor-pointer
+              transition-colors
+              duration-200
+              w-full
+            "
+          >
+            entrar
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
